@@ -3,15 +3,15 @@
 class Database {
 
     private $host = 'localhost';
-    private $db = 'task_db';
-    private $user = 'root';
+    private $db_name = 'task_db';
+    private $username = 'root';
     private $password = '';
     public $conn;
 
 
 
     public function connect(){
-        $this->conn = new mysqli($this->host, $this->user, $this->pass, $this->db);
+        $this->conn = new mysqli($this->host, $this->username, $this->password, $this->db_name);
         if ($this->conn->connect_error) {
             die("Connection failed: " . $this->conn->connect_error);
         }
